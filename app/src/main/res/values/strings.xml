@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lab</string>
+    <string name="txt_button_gallery">Работа с галереей (intent)</string>
+    <string name="txt_button_web">Работа с WebView</string>
+    <string name="str_button_load_photo">Загрузить фотографию</string>
+    <string name="txt_button_sql">Работа с Room (SQL)</string>
+    <string name="txt_add_contact">Добавить контакт</string>
+    <string name="txt_list_contacts">Список контактов</string>
+    <string name="txt_name_element">Имя</string>
+    <string name="txt_email_element">Email</string>
+    <string name="txt_phone_element">Номер телефона</string>
+</resources>
