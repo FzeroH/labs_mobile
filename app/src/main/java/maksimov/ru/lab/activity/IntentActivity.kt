@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatDelegate
 import maksimov.ru.lab.R
 import java.io.InputStream
 
@@ -20,7 +21,7 @@ class IntentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intent)
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         mImageView = findViewById(R.id.image_view)
 
         mBtnLoadPhoto = findViewById(R.id.btn_load_photo)

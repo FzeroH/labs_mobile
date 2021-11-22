@@ -9,4 +9,9 @@
     <string name="txt_name_element">Имя</string>
     <string name="txt_email_element">Email</string>
     <string name="txt_phone_element">Номер телефона</string>
+    <string name="hint_e_mail">E-mail</string>
+    <string name="hint_name">Имя контакта</string>
+    <string name="hint_phone">Номер телефона</string>
+    <string name="txt_add">Добавить</string>
+    <string name="txt_delete">Удалить</string>
 </resources>
