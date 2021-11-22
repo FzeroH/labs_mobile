@@ -33,6 +33,14 @@
         android:textAllCaps="false"
         android:layout_gravity="center"/>
 
+    <Button
+        android:id="@+id/btn_sensors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_btn_sensors"
+        android:textAllCaps="false"
+        android:layout_gravity="center"/>
+
 
 
 

@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mBtnWeb: Button
     private lateinit var mBtnGallery: Button
     private lateinit var mBtnSql: Button
+    private lateinit var mBtnSensors: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         mBtnWeb = findViewById(R.id.btn_web)
         mBtnGallery = findViewById(R.id.btn_gallery)
         mBtnSql = findViewById(R.id.btn_sql)
+        mBtnSensors = findViewById(R.id.btn_sensors)
     }
 
     override fun onStart() {
@@ -36,6 +38,10 @@ class MainActivity : AppCompatActivity() {
         mBtnSql.setOnClickListener{
             val intentSQL = Intent(this@MainActivity, SQLiteActivity::class.java)
             startActivity(intentSQL)
+        }
+        mBtnSensors.setOnClickListener{
+            val intentSensors = Intent(this@MainActivity, SensorsActivity::class.java)
+            startActivity(intentSensors)
         }
     }
 }
