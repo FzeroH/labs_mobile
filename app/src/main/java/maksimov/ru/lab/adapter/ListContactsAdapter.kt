@@ -34,20 +34,18 @@ class ListContactsAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         contactsList = newContactsList
         notifyDataSetChanged()
     }
-
-
 }
+
 class ListContactsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private  var mTxtName : TextView = itemView.findViewById(R.id.txt_name_element)
     private var mTxtEmail : TextView = itemView.findViewById(R.id.txt_email_element)
     private var mTxtPhone : TextView = itemView.findViewById(R.id.txt_phone_element)
 
-
     fun bind(contacts: ContactsEntity){
         contacts.apply{
+            mTxtPhone.text = phoneNumber
             mTxtName.text = name
             mTxtEmail.text = email
-            mTxtPhone.text = phoneNumber
         }
     }
 }
