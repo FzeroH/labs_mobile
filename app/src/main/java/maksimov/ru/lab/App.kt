@@ -7,8 +7,7 @@ import maksimov.ru.lab.data.ContactsDB
 import maksimov.ru.lab.repository.ContactsRepository
 
 class App: Application() {
-    //val applicationScope = CoroutineScope(SupervisorJob())
 
-    val db by lazy {ContactsDB.getDatabase(this@App, /*applicationScope*/) }
+    val db by lazy {ContactsDB.getDatabase(this@App) }
     val repository by lazy {ContactsRepository(db.contactsDao())}
 }

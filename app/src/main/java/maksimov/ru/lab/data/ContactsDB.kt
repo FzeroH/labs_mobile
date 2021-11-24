@@ -15,35 +15,16 @@ import maksimov.ru.lab.data.entity.ContactsEntity
 abstract class ContactsDB: RoomDatabase() {
     abstract fun contactsDao(): ContactsDAO
 
-/*    private class ContactsDatabaseCallback(
-        private val scope:CoroutineScope
-    ): RoomDatabase.Callback(){
-        override fun onCreate(db: SupportSQLiteDatabase) {
-            super.onCreate(db)
-            INSTANCE?.let { database ->
-                scope.launch(Dispatchers.IO) {
-                    populateDatabase(database.contactsDao())
-                }
-            }
-        }
-        suspend fun populateDatabase(contactsDao: ContactsDAO){
-            contactsDao.deleteAll()
-            val contact = ContactsEntity("89995554433","Игорь","aboba@mail.ru")
-            contactsDao.addContact(contact)
-        }
-    }*/
-
     companion object{
         @Volatile
         private var INSTANCE: ContactsDB? = null
 
-        fun getDatabase(context: Context, /*scope: CoroutineScope*/): ContactsDB{
+        fun getDatabase(context: Context): ContactsDB{
             return INSTANCE ?: synchronized(this){
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     ContactsDB::class.java,
                     "Contacts")
-                    //.addCallback(ContactsDatabaseCallback(scope))
                     .build()
                 INSTANCE = instance
                 instance

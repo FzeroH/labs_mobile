@@ -23,7 +23,6 @@ class SensorsActivity : AppCompatActivity(), SensorEventListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sensors)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
         view = findViewById(R.id.view)
         cost = findViewById(R.id.rotation)
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager

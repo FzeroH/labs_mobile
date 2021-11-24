@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatDelegate
@@ -17,6 +18,8 @@ class IntentActivity : AppCompatActivity() {
     private lateinit var mBtnLoadPhoto: Button
     private lateinit var mImageView: ImageView
     private var pickerPhoto: Int = 1
+    private val IMG:String = "IMG"
+    private var selectedImage: Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +33,17 @@ class IntentActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(IMG,selectedImage)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        val image: Bitmap? = savedInstanceState.getParcelable(IMG)
+        mImageView.setImageBitmap(image)
+    }
+    
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == pickerPhoto){
@@ -47,9 +61,8 @@ class IntentActivity : AppCompatActivity() {
     private fun setPhoto(data: Intent?){
         val imageUri: Uri = data?.data!!
         val imageStream: InputStream = contentResolver.openInputStream(imageUri)!!
-        val selectedImage: Bitmap = BitmapFactory.decodeStream(imageStream)
+        selectedImage = BitmapFactory.decodeStream(imageStream)
         mImageView.setImageBitmap(selectedImage)
-
     }
 
     private fun loadPhoto() {

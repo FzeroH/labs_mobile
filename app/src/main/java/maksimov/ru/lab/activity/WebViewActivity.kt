@@ -18,11 +18,10 @@ class WebViewActivity : AppCompatActivity() {
         webView.apply {
             loadUrl(URL)
         }
-
     }
 
     companion object{
-        private val URL: String = "https://google.com/"
+        private val URL: String = "https://www.google.ru/"
     }
 
 }

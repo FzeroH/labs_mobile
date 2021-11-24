@@ -8,7 +8,6 @@ import maksimov.ru.lab.repository.ContactsRepository
 
 class ContactsViewModel(private val repository: ContactsRepository): ViewModel() {
 
-
     var contactsLiveData : LiveData<List<ContactsEntity>> = repository.getAllContacts.asLiveData()
 
     fun addContact(contact: ContactsEntity) {
